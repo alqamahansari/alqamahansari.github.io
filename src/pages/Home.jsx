@@ -7,7 +7,7 @@ const skills = [
   "Artificial Intelligence", "Machine Learning", "Deep Learning",
   "Large Language Models", "Natural Language Processing", "Computer Vision",
   "Reinforcement Learning", "Python", "NumPy", "Pandas", "Matplotlib",
-  "Seaborn", "Scikit-learn", "TensorFlow", "SQL / SQLite", "DevOps",
+  "Seaborn", "Scikit-learn", "Pytorch", "SQL / SQLite", "DevOps",
   "MLOps", "Git & GitHub", "Docker", "CI/CD Pipelines", "Version Control",
   "Deployment & Monitoring", "Data Analysis", "Ethical AI",
 ];

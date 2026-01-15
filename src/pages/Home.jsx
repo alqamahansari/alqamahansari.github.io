@@ -42,12 +42,11 @@ export default function Home() {
         </h1>
 
         <p className="text-lg text-gray-700 mb-1">
-          Exploring the Intersection of AI and DevOps
+          AI Engineer at the Intersection of Intelligence and Infrastructure
         </p>
-
+        
         <p className="text-sm text-gray-600 max-w-2xl">
-          AI Student & Developer | Passionate about Machine Learning, Deep Learning,
-          LLMs, and Modern DevOps Practices.
+          Machine Learning • Deep Learning • Large Language Models • DevOps & MLOps
         </p>
 
         <div className="mt-6">
@@ -67,22 +66,26 @@ export default function Home() {
           ABOUT SECTION
       ------------------------------- */}
       <section
-        id="about"
-        className="min-h-screen flex flex-col justify-center items-center text-center px-6"
-      >
-        <h2 className="text-3xl font-semibold mb-4 border-b-2 border-blue-700 inline-block">
-          About Me
-        </h2>
-        <p className="max-w-2xl leading-relaxed text-gray-800">
-          Hi, I'm <span className="font-semibold">Mohammad Alquamah Ansari</span> — an AI and DevOps
-          enthusiast who enjoys building practical, efficient, and clean technology solutions.
-          <br /><br />
-          I'm currently pursuing my <span className="font-semibold">B.Sc. in Artificial Intelligence</span>,
-          working with Machine Learning, Deep Learning, LLMs, and DevOps tools like Docker and CI/CD.
-          I enjoy combining AI development with automation to create systems that are reliable,
-          scalable, and easy to deploy.
-        </p>
-      </section>
+  id="about"
+  className="min-h-screen flex flex-col justify-center items-center text-center px-6"
+>
+  <h2 className="text-3xl font-semibold mb-4 border-b-2 border-blue-700 inline-block">
+    About Me
+  </h2>
+  <p className="max-w-2xl leading-relaxed text-gray-800">
+    Hi, I'm <span className="font-semibold">Mohammad Alquamah Ansari</span>, an AI Engineer and DevOps 
+    practitioner focused on building practical, reliable, and scalable technology solutions.
+    <br /><br />
+    I hold a <span className="font-semibold">B.Sc. in Artificial Intelligence</span> and work across 
+    Machine Learning, Deep Learning, Large Language Models (LLMs), and modern DevOps workflows. My approach 
+    emphasizes not just model performance, but also system reliability—combining AI development with containerization, 
+    automation, and CI/CD pipelines to deliver production-ready solutions.
+    <br /><br />
+    I am particularly interested in developing AI systems that are efficient, responsible, and aligned with 
+    real-world impact, with a long-term focus on ethical and sustainable AI.
+  </p>
+</section>
+
 
       {/* ------------------------------
           PROJECTS SECTION (Preview)
@@ -134,7 +137,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://github.com/alqamahansari/Emotion-Detection-System"
+              href="https://github.com/alqamahansari/house-price-prediction"
               target="_blank"
               rel="noreferrer"
               className="text-blue-600 underline"

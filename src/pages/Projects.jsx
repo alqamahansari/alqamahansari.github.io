@@ -32,17 +32,7 @@ const allProjects = [
     tech: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
     repo: "https://github.com/alqamahansari/atmos",
     caseStudy: "#",
-  },
-  {
-    id: "ai-career",
-    title: "AI-Powered Career Learning Platform (Ongoing)",
-    short: "Multi-track AI-driven learning platform with LLM-powered mentoring and adaptive assessments.",
-    details:
-      "A purpose-driven platform that personalizes career growth through staged learning paths, LLM mentoring, and job/academic recommendations.",
-    tech: ["React", "Node.js", "LLMs", "Python"],
-    repo: "https://github.com/AlqamahAnsari/AI-Career-Learning-Platform",
-    caseStudy: "#",
-  },
+  }
 ];
 
 export default function Projects() {

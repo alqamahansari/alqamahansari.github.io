@@ -1,5 +1,6 @@
 // src/pages/Projects.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 const allProjects = [
   {
@@ -23,14 +24,14 @@ const allProjects = [
     repo: "https://github.com/alqamahansari/car-price-prediction",
   },
   {
-  id: "emotion-detection",
-  tag: "Deep Learning • Computer Vision",
-  title: "Facial Emotion Detection System",
-  short: "Emotion recognition from facial images using CNN-based models.",
-  details:
-    "Computer vision-based deep learning system for facial emotion classification using image preprocessing, CNN architectures, and structured training and evaluation pipelines.",
-  tech: ["Python", "TensorFlow", "OpenCV", "CNN"],
-  repo: "https://github.com/alqamahansari/Emotion-Detection-System",
+    id: "emotion-detection",
+    tag: "Deep Learning • Computer Vision",
+    title: "Facial Emotion Detection System",
+    short: "Emotion recognition from facial images using CNN-based models.",
+    details:
+      "Computer vision-based deep learning system for facial emotion classification using image preprocessing, CNN architectures, and structured training and evaluation pipelines.",
+    tech: ["Python", "TensorFlow", "OpenCV", "CNN"],
+    repo: "https://github.com/alqamahansari/Emotion-Detection-System",
   },
   {
     id: "atmos",
@@ -104,6 +105,16 @@ export default function Projects() {
             </a>
           </article>
         ))}
+      </div>
+
+      {/* BACK TO HOME */}
+      <div className="text-left mt-10">
+        <Link
+          to="/#projects"
+          className="text-black font-medium hover:underline"
+        >
+          ← Back to Home
+        </Link>
       </div>
 
     </main>

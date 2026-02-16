@@ -3,14 +3,32 @@ import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiMail, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
-const skills = [
-  "Artificial Intelligence", "Machine Learning", "Deep Learning",
-  "Large Language Models", "Natural Language Processing", "Computer Vision",
-  "Reinforcement Learning", "Python", "NumPy", "Pandas", "Matplotlib",
-  "Seaborn", "Scikit-learn", "Pytorch", "SQL / SQLite", "DevOps",
-  "MLOps", "Git & GitHub", "Docker", "CI/CD Pipelines", "Version Control",
-  "Deployment & Monitoring", "Data Analysis", "Ethical AI",
-];
+const skills = {
+  "Core AI & Modeling": [
+    "Machine Learning",
+    "Deep Learning",
+    "Time-Series Modeling",
+    "Computer Vision",
+    "Large Language Models"
+  ],
+  "Tools & Frameworks": [
+    "PyTorch",
+    "Scikit-learn",
+    "XGBoost",
+    "NumPy",
+    "Pandas",
+    "Matplotlib"
+  ],
+  "Engineering & Deployment": [
+    "MLOps",
+    "Docker",
+    "CI/CD Pipelines",
+    "Git & GitHub",
+    "Python",
+    "JavaScript",
+    "SQL"
+  ]
+};
 
 export default function Home() {
   const location = useLocation();
@@ -181,14 +199,24 @@ export default function Home() {
           Skills
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mt-4 max-w-4xl">
-          {skills.map((s, i) => (
-            <span
-              key={i}
-              className="bg-blue-100 text-black px-4 py-2 rounded-full text-sm"
-            >
-              {s}
-            </span>
+        <div className="mt-8 w-full max-w-4xl space-y-8 text-left">
+          {Object.entries(skills).map(([category, items]) => (
+          <div key={category}>
+            <h3 className="text-lg font-semibold mb-3 text-black">
+              {category}
+            </h3>
+
+            <div className="flex flex-wrap gap-3">
+              {items.map((skill, index) => (
+              <span
+                key={index}
+                className="bg-blue-100 text-black px-4 py-2 rounded-full text-sm"
+              >
+                {skill}
+              </span>
+              ))}
+            </div>
+          </div>
           ))}
         </div>
       </section>

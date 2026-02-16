@@ -34,38 +34,39 @@ export default function Home() {
           HOME (Hero Section)
       ---------------------------------- */}
       <section
-        id="home"
-        className="min-h-screen flex flex-col justify-center items-center text-center -mt-16"
-      >
-        <h1 className="text-5xl font-bold mb-2 text-black">
-          Mohammad Alquamah Ansari
-        </h1>
+  id="home"
+  className="min-h-screen flex flex-col justify-center items-center text-center -mt-16"
+>
+  <h1 className="text-5xl font-bold mb-2 text-black">
+    Mohammad Alquamah Ansari
+  </h1>
 
-        <p className="text-lg text-gray-700 mb-1">
-          AI Engineer at the Intersection of Intelligence and Infrastructure
-        </p>
-        
-        <p className="text-sm text-gray-600 max-w-2xl">
-          Machine Learning • Deep Learning • Large Language Models • DevOps & MLOps
-        </p>
+  <p className="text-lg text-gray-700 mb-1">
+    AI Engineer Focused on Intelligent Systems & Scalable ML Infrastructure
+  </p>
+  
+  <p className="text-sm text-gray-600 max-w-2xl">
+    Machine Learning • Deep Learning • Time-Series Modeling • MLOps • Large Language Models
+  </p>
 
-        <div className="mt-6">
-          <a
-            href="/Mohammad-Alquamah-Ansari-Resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="px-6 py-3 bg-black text-white rounded-lg text-sm font-medium
-                       hover:bg-gray-900 transition duration-150"
-          >
-            View Resume
-          </a>
-        </div>
-      </section>
+  <div className="mt-6">
+    <a
+      href="/Mohammad-Alquamah-Ansari-Resume.pdf"
+      target="_blank"
+      rel="noreferrer"
+      className="px-6 py-3 bg-black text-white rounded-lg text-sm font-medium
+                 hover:bg-gray-900 transition duration-150"
+    >
+      View Resume
+    </a>
+  </div>
+</section>
+
 
       {/* ------------------------------
           ABOUT SECTION
       ------------------------------- */}
-      <section
+    <section
   id="about"
   className="min-h-screen flex flex-col justify-center items-center text-center px-6"
 >
@@ -73,16 +74,11 @@ export default function Home() {
     About Me
   </h2>
   <p className="max-w-2xl leading-relaxed text-gray-800">
-    Hi, I'm <span className="font-semibold">Mohammad Alquamah Ansari</span>, an AI Engineer and DevOps 
-    practitioner focused on building practical, reliable, and scalable technology solutions.
+    Hi, I'm <span className="font-semibold">Mohammad Alquamah Ansari</span>, an AI Engineer focused on building intelligent systems that are both technically rigorous and production-ready.
     <br /><br />
-    I hold a <span className="font-semibold">B.Sc. in Artificial Intelligence</span> and work across 
-    Machine Learning, Deep Learning, Large Language Models (LLMs), and modern DevOps workflows. My approach 
-    emphasizes not just model performance, but also system reliability—combining AI development with containerization, 
-    automation, and CI/CD pipelines to deliver production-ready solutions.
+    I hold a <span className="font-semibold">B.Sc. in Artificial Intelligence</span> and work across Machine Learning, Deep Learning, time-series modeling, and modern MLOps workflows. My work combines model development with structured experimentation, reproducible pipelines, and scalable deployment practices.
     <br /><br />
-    I am particularly interested in developing AI systems that are efficient, responsible, and aligned with 
-    real-world impact, with a long-term focus on ethical and sustainable AI.
+    I am particularly interested in research-driven AI systems, including forecasting models, deep learning architectures, and large language models. My long-term goal is to contribute to responsible, efficient, and impactful AI systems aligned with real-world needs.
   </p>
 </section>
 
@@ -90,70 +86,89 @@ export default function Home() {
       {/* ------------------------------
           PROJECTS SECTION (Preview)
       ------------------------------- */}
-      <section
-        id="projects"
-        className="min-h-screen flex flex-col justify-center items-center text-center px-6"
+<section
+  id="projects"
+  className="min-h-screen flex flex-col justify-center items-center text-center px-6"
+>
+  <h2 className="text-3xl font-semibold mb-8 border-b-2 border-blue-700 inline-block">
+    Projects
+  </h2>
+
+  <div className="w-full max-w-3xl flex flex-col gap-8">
+
+    {/* AQI Project */}
+    <div className="border rounded-lg p-6 bg-white shadow hover:shadow-lg transition-shadow text-left">
+      
+      <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">
+        Research • ML/DL
+      </span>
+
+      <h3 className="text-xl font-bold mb-2 mt-1">
+        Air Quality Intelligence for India
+      </h3>
+
+      <p className="mb-2">
+        Spatio-temporal AQI forecasting using ML and LSTM models with structured evaluation and health risk mapping.
+      </p>
+
+      <div className="mb-4 flex flex-wrap gap-2">
+        <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">Python</span>
+        <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">LSTM</span>
+        <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">XGBoost</span>
+        <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">Time-Series</span>
+      </div>
+
+      <a
+        href="https://github.com/alqamahansari/aqi-project"
+        target="_blank"
+        rel="noreferrer"
+        className="text-blue-600 underline"
       >
-        <h2 className="text-3xl font-semibold mb-8 border-b-2 border-blue-700 inline-block">
-          Projects
-        </h2>
+        View Code
+      </a>
+    </div>
 
-        <div className="w-full max-w-3xl flex flex-col gap-8">
+    {/* Car Price MLOps */}
+    <div className="border rounded-lg p-6 bg-white shadow hover:shadow-lg transition-shadow text-left">
 
-          {/* Emotion Detection */}
-          <div className="border rounded-lg p-6 bg-white shadow hover:shadow-lg transition-shadow text-left">
-            <h3 className="text-xl font-bold mb-2">Emotion Detection</h3>
-            <p className="mb-2">
-              Deep learning-based emotion recognition model built using CNNs and image preprocessing techniques.
-            </p>
+      <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">
+        MLOps • Production ML
+      </span>
 
-            <div className="mb-4 flex flex-wrap gap-2">
-              <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">TensorFlow</span>
-              <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">Keras</span>
-              <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">OpenCV</span>
-            </div>
+      <h3 className="text-xl font-bold mb-2 mt-1">
+        Car Price Prediction – Production ML Pipeline
+      </h3>
 
-            <a
-              href="https://github.com/alqamahansari/Emotion-Detection-System"
-              target="_blank"
-              rel="noreferrer"
-              className="text-blue-600 underline"
-            >
-              View Code
-            </a>
-          </div>
+      <p className="mb-2">
+        End-to-end machine learning pipeline with Docker containerization, CI automation, and structured training workflow.
+      </p>
 
-          {/* House Price Prediction */}
-          <div className="border rounded-lg p-6 bg-white shadow hover:shadow-lg transition-shadow text-left">
-            <h3 className="text-xl font-bold mb-2">House Price Prediction App</h3>
-            <p className="mb-2">
-              Machine Learning model predicting house prices using regression algorithms and feature engineering.
-            </p>
+      <div className="mb-4 flex flex-wrap gap-2">
+        <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">Random Forest</span>
+        <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">Streamlit</span>
+        <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">Docker</span>
+        <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">CI/CD</span>
+      </div>
 
-            <div className="mb-4 flex flex-wrap gap-2">
-              <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">Python</span>
-              <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">XGBoost</span>
-              <span className="bg-blue-100 text-black px-3 py-1 rounded text-sm">Flask</span>
-            </div>
+      <a
+        href="https://github.com/alqamahansari/car-price-prediction"
+        target="_blank"
+        rel="noreferrer"
+        className="text-blue-600 underline"
+      >
+        View Code
+      </a>
+    </div>
 
-            <a
-              href="https://github.com/alqamahansari/house-price-prediction"
-              target="_blank"
-              rel="noreferrer"
-              className="text-blue-600 underline"
-            >
-              View Code
-            </a>
-          </div>
+    <div className="text-left mt-2">
+      <Link to="/projects" className="text-black font-medium hover:underline">
+        View All →
+      </Link>
+    </div>
 
-          <div className="text-left mt-2">
-  <Link to="/projects" className="text-black font-medium hover:underline">
-    View All →
-  </Link>
-</div>
+  </div>
+</section>
 
-        </div>
-      </section>
 
       {/* ------------------------------
           SKILLS SECTION

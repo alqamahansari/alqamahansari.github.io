@@ -137,7 +137,7 @@ export default function Home() {
       </div>
 
       <a
-        href="https://github.com/alqamahansari/aqi-project"
+        href="https://github.com/alqamahansari/air-quality-intelligence"
         target="_blank"
         rel="noreferrer"
         className="text-blue-600 underline"

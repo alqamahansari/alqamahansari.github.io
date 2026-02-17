@@ -11,7 +11,7 @@ const allProjects = [
     details:
       "Comparative study of ML (XGBoost, Random Forest) and LSTM-based time-series forecasting for Indian AQI prediction with rolling validation, structured feature engineering, and health risk mapping.",
     tech: ["Python", "LSTM", "XGBoost", "Time-Series", "Pandas"],
-    repo: "https://github.com/alqamahansari/aqi-project",
+    repo: "https://github.com/alqamahansari/air-quality-intelligence",
   },
   {
     id: "car-price",

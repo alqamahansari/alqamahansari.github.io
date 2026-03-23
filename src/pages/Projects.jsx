@@ -24,6 +24,16 @@ const allProjects = [
     repo: "https://github.com/alqamahansari/car-price-prediction",
   },
   {
+  id: "interview-analyzer",
+  tag: "AI • CNN + NLP",
+  title: "AI-Based Interview Performance Analyzer",
+  short: "AI system that analyzes interview performance using facial emotion recognition and NLP-based answer evaluation.",
+  details:
+    "An AI-powered interview evaluation system that uses CNN models for facial emotion detection and NLP techniques to analyze candidate answers. The system evaluates confidence, sentiment, communication quality, and technical answer relevance, generating an overall interview performance score and feedback report.",
+  tech: ["Python", "CNN", "NLP", "TensorFlow", "OpenCV", "NLTK", "Streamlit"],
+  repo: "https://github.com/alqamahansari/ai-interview-performance-analyzer"
+},
+  {
     id: "emotion-detection",
     tag: "Deep Learning • Computer Vision",
     title: "Facial Emotion Detection System",

@@ -12,51 +12,62 @@ export default function Header() {
   const nav = [
     { id: "home",       label: "Home",       type: "scroll" },
     { id: "about",      label: "About",      type: "scroll" },
-    { id: "projects",   label: "Projects",   type: "page",   to: "/projects" },
+    { id: "projects",   label: "Projects",   type: "both",  to: "/projects" },
     { id: "experience", label: "Experience", type: "scroll" },
     { id: "contact",    label: "Contact",    type: "scroll" },
   ];
 
+  // ── Single unified scroll effect ───────────
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
 
-  useEffect(() => {
-    if (location.pathname !== "/") return;
-    const sections = document.querySelectorAll("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { threshold: 0.5 }
-    );
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+      if (location.pathname !== "/") return;
+
+      const sectionIds = ["home", "about", "projects", "experience", "contact"];
+      const scrollY = window.scrollY + window.innerHeight * 0.4;
+
+      let current = "home";
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && scrollY >= el.offsetTop) {
+          current = id;
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 
+  // ── Click handler ──────────────────────────
   const handleNavClick = (item) => {
     setMenuOpen(false);
-    if (item.type === "page") {
+
+    if (item.type === "both") {
       navigate(item.to);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
+
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
         document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+      }, 150);
     } else {
       document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
+  // ── Active state ───────────────────────────
   const isActive = (item) => {
-    if (item.type === "page") return location.pathname === item.to;
+    if (item.type === "both") {
+      return location.pathname === item.to ||
+        (location.pathname === "/" && activeSection === item.id);
+    }
     return location.pathname === "/" && activeSection === item.id;
   };
 
@@ -71,6 +82,7 @@ export default function Header() {
     >
       <nav className="max-w-7xl mx-auto px-8 flex items-center justify-between py-4">
 
+        {/* Logo */}
         <button
           onClick={() => handleNavClick({ id: "home", type: "scroll" })}
           className="text-lg font-bold tracking-tighter text-[#00C9A7] uppercase hover:text-white transition-colors duration-200 font-['Space_Grotesk']"
@@ -78,6 +90,7 @@ export default function Header() {
           Alquamah Ansari
         </button>
 
+        {/* Desktop nav */}
         <div className="hidden md:flex gap-8 items-center">
           {nav.map((item) => (
             <button
@@ -103,33 +116,20 @@ export default function Header() {
           </a>
         </div>
 
+        {/* Mobile hamburger */}
         <button
           className="md:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span
-            className={
-              "block w-6 h-0.5 bg-[#00C9A7] transition-all duration-300 " +
-              (menuOpen ? "rotate-45 translate-y-2" : "")
-            }
-          />
-          <span
-            className={
-              "block w-6 h-0.5 bg-[#00C9A7] transition-all duration-300 " +
-              (menuOpen ? "opacity-0" : "")
-            }
-          />
-          <span
-            className={
-              "block w-6 h-0.5 bg-[#00C9A7] transition-all duration-300 " +
-              (menuOpen ? "-rotate-45 -translate-y-2" : "")
-            }
-          />
+          <span className={"block w-6 h-0.5 bg-[#00C9A7] transition-all duration-300 " + (menuOpen ? "rotate-45 translate-y-2" : "")} />
+          <span className={"block w-6 h-0.5 bg-[#00C9A7] transition-all duration-300 " + (menuOpen ? "opacity-0" : "")} />
+          <span className={"block w-6 h-0.5 bg-[#00C9A7] transition-all duration-300 " + (menuOpen ? "-rotate-45 -translate-y-2" : "")} />
         </button>
 
       </nav>
 
+      {/* Mobile menu */}
       <div
         className={
           "md:hidden overflow-hidden transition-all duration-300 bg-[#080E1E] border-t border-[#5A9ABF]/20 " +
@@ -152,7 +152,7 @@ export default function Header() {
             </button>
           ))}
           <a
-            href="/Mohammad-Alqamah-Ansari-Resume.pdf"
+            href="/Mohammad-Alquamah-Ansari-Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="mt-4 bg-[#00C9A7] text-[#00382d] px-5 py-3 text-xs uppercase font-bold tracking-widest text-center hover:brightness-110 transition-all duration-200 font-['Space_Grotesk']"

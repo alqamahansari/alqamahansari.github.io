@@ -142,14 +142,6 @@ export default function Contact() {
               ))}
             </div>
           </div>
-
-          {/* Open to work badge */}
-          <div className="flex items-center gap-3 pt-4">
-            <span className="w-2 h-2 rounded-full bg-[#00C9A7] animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#00C9A7] font-['Space_Grotesk']">
-              Open to ML Engineering & MLOps Roles
-            </span>
-          </div>
         </div>
 
         {/* ── RIGHT: Form ── */}
